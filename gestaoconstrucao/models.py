@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Venda(models.Model):
     cliente = models.ForeignKey('Cliente', on_delete=models.DO_NOTHING, default=1)
     valor = models.DecimalField(max_digits=12, decimal_places=2, null=False, blank=False,
@@ -21,14 +22,14 @@ class Venda(models.Model):
     Produtos2 = models.ManyToManyField('Hidraulico', verbose_name='Produtos hidraulicos')
     Produtovid = models.ManyToManyField('Vidro', verbose_name='Vidros')
     Produtotin = models.ManyToManyField('Tinta', verbose_name='Tintas')
-    Produtocob = models.ManyToManyField('Coberta', verbose_name='Cobertas')
+    Produtocob = models.ManyToManyField("Coberta", verbose_name='Cobertas')
     Produtofer = models.ManyToManyField('Ferramenta', verbose_name='Ferramentas')
     Produtoilu = models.ManyToManyField('Iluminacao', verbose_name='Iluminação')
     Produtoestru = models.ManyToManyField('Estrutura', verbose_name='Estrutura')
     Produtopis = models.ManyToManyField('Piso', verbose_name='Piso')
 
     def __str__(self):
-        return str(self.cliente)
+        return self.cliente
 
 
 class Eletricos(models.Model):

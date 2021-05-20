@@ -1,0 +1,16 @@
+{% extends 'adminlte/base.html' %}
+{% block content %}
+    <h1>Detalhes da venda:</h1>
+
+<p><b>Cliente:</b> {{ object.Cliente }}</p>
+<p><b>Valor:</b> {{ object.valor }}</p>
+<p><b>Data venda:</b> {{ object.data_venda }}</p>
+<p><b>Hora venda:</b> {{ object.hora_venda }}</p>
+<p><b>Data e hora venda:</b> {{ object.data_hora_venda }}</p>
+<p><b>Número da venda:</b> {{ object.numero_venda }}</p>
+<p><b>Observação:</b> {{ object.observacao }}</p>
+<p><b>Comprovante da Venda:</b> <img class="rounded-circle" src="/media/{{ object.comprovante_venda }}" /></p>
+<p><b>Venda Concluida:</b> {{ object.venda_concluida }}</p>
+<p><b>Produto:</b> {{ object.produto1 }}</p>
+
+{% endblock %}

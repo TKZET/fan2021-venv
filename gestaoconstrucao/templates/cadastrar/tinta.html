@@ -1,0 +1,11 @@
+{% extends 'adminlte/base.html' %}
+{% load bootstrap %}
+{% block content  %}
+    <h1>Bem-vindo a pagina de Cadastro de tinta!</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <a class="btn btn-warning" href="{% url 'listar_tinta' %}">Voltar</a>
+        <input class="btn btn-success" type="submit" value="Cadastrar">
+    </form>
+{% endblock %}
